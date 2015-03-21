@@ -65,7 +65,7 @@
 	{
 		overflow: hidden;
 		margin: 0em auto;
-		width: 1000px;
+		width: 100%;
 	}
 	
 /*********************************************************************************/
@@ -453,8 +453,16 @@ div#profile {
 /* Sidebar                                                                       */
 /*********************************************************************************/
 
-	#sidebar
+	#side-menu	
 	{
+		width: 20%;
+		position: fixed;
+		display: none;
+		height: 100%;
+		background-color: rgb(238, 238, 238);
+		border-radius: 10px;
+		border-width: 10px;
+		border-color: rgb(39, 174, 97);
 	}
 
 /*********************************************************************************/
@@ -590,12 +598,16 @@ div#user-detail {
 }
 
 .post {
-    border: 2px;  background: rgb(177, 224, 177);  
-    padding: 10px;
+	width: 100%;
+    border: 2px;  
+    background: rgb(177, 224, 177);  
+    padding: 3%;
 }
 .post-even {
-    border: 2px;  background: rgb(#FFF);  
-    padding: 10px;
+	width: 100%;
+    border: 2px;  
+    background: rgb(#FFF);  
+    padding: 3%;
 }
 .post-odd {
     border: 2px;  background: rgb(177, 224, 177);  
