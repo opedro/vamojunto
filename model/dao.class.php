@@ -14,20 +14,15 @@ class Dao {
 
   public function __construct(
     $db_user, $db_pass, $db_name,
-    $db_type = 'mysql', $db_path, $db_host = 'localhost') {
+    $db_type = 'mysql', $db_host = 'localhost') {
       $this->db_host = $db_host;
       $this->db_user = $db_user;
       $this->db_pass = $db_pass;
       $this->db_name = $db_name;
-      $this->db_path = $db_path;
       $this->db_type = $db_type;
       switch($this->db_type){
         case "mysql":
         $this->connection_string = "mysql:host=".$db_host.";dbname=".$db_name;
-        break;
-
-        case "sqlite":
-        $this->connection_string = "sqlite:".$db_path;
         break;
 
         case "oracle":
@@ -75,30 +70,28 @@ class Dao {
     }
   }
 
-  public function select($table, $rows = '*', $where = NULL, $order = NULL) {
-    if($this->tableExists($table)) {
-      $q = 'SELECT '.$rows.' FROM '.$table;
+  public function select($table, $rows = "*", $where = NULL, $order = NULL) {
+    $q = "SELECT ".$rows." FROM ".$table;
 
-      if($where != NULL) {
-        $q .= ' WHERE '.$where;
-      }
+    if($where != NULL) {
+      $q .= ' WHERE '.$where;
+    }
 
-      if($order != NULL) {
-        $q .= ' ORDER BY '.$order;
-      }
+    if($order != NULL) {
+      $q .= " ORDER BY ".$order;
+    }
 
-      $this->numResults = NULL;
+    $this->numResults = NULL;
 
-      try {
-        $sql = $this->db->prepare($q);
-        $sql->execute();
-        $this->result = $sql->fetchAll(PDO::FETCH_ASSOC);
-        $this->numResults = count($this->result);
-        $this->numResults === 0 ? $this->result = NULL : true ;
-        return true;
-      } catch(PDOException $e) {
-        return $e->getMessage().' '.$e->getTraceAsString();
-      }
+    try {
+      $sql = $this->db->prepare($q);
+      $sql->execute();
+      $this->result = $sql->fetchAll(PDO::FETCH_ASSOC);
+      $this->numResults = count($this->result);
+      $this->numResults === 0 ? $this->result = NULL : true ;
+      return true;
+    } catch(PDOException $e) {
+      return $e->getMessage().' '.$e->getTraceAsString();
     }
   }
 
