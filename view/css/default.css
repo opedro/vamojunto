@@ -1,4 +1,4 @@
-	html, body
+html, body
 	{
 		height: 100%;
 	}
@@ -453,16 +453,8 @@ div#profile {
 /* Sidebar                                                                       */
 /*********************************************************************************/
 
-	#side-menu	
+	#sidebar
 	{
-		width: 20%;
-		position: fixed;
-		display: none;
-		height: 100%;
-		background-color: rgb(238, 238, 238);
-		border-radius: 10px;
-		border-width: 10px;
-		border-color: rgb(39, 174, 97);
 	}
 
 /*********************************************************************************/
@@ -598,16 +590,12 @@ div#user-detail {
 }
 
 .post {
-	width: 100%;
-    border: 2px;  
-    background: rgb(177, 224, 177);  
-    padding: 3%;
+    border: 2px;  background: rgb(177, 224, 177);  
+    padding: 10px;
 }
 .post-even {
-	width: 100%;
-    border: 2px;  
-    background: rgb(#FFF);  
-    padding: 3%;
+    border: 2px;  background: rgb(#FFF);  
+    padding: 10px;
 }
 .post-odd {
     border: 2px;  background: rgb(177, 224, 177);  
@@ -630,15 +618,13 @@ ul.tags {
     /* align-self: auto; */
 }
 
-li {}
-
- {}
-
- {}
-
 ul.tags li {
     display: inline;
     padding: 1%;
+    background-color: rgb(173, 213, 173);
+    border-radius: 25px;
+    border-color: white;
+    margin: 0 3px;
 }
 
 li#partida {
@@ -652,7 +638,7 @@ li#chegada {
 }
 
 span.post-name {
-    DISPLAY: inline;
+    display: inline;
 }
 
 div#poster-info {
