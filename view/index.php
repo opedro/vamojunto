@@ -28,7 +28,7 @@ $posts = new Post();
 
     <div id="user-detail">
         <img src="images/pic01.jpg" class="profile-image" alt="">
-        <span id="user-name">Maria das Dores</span>
+        <span id="user-name">Thiago Retondar</span>
         <span id="user-info">Any info</span>
     </div>
 
@@ -47,7 +47,7 @@ $posts = new Post();
     <div id="posts" style="display: inline-block;">
     <?php
         $qtd_posts = count($posts->getPosts());
-        $i = 1;
+        $i = 0;
         foreach($posts->getPosts() as $post) {
             $class = ($i++ % 2 == 0) ? 'post-even' : 'post';
             $post_pessoa = $pessoa->getPessoaById($post["id_pessoa"]);
@@ -58,7 +58,7 @@ $posts = new Post();
         <img src="<?php echo $post_pessoa['foto'] ?>" class="post-image">
         <ul id="post-info">
           <li><h1><?php echo $post_pessoa["nome"] . " " . $post_pessoa["sobrenome"]; ?></h1></li>
-          <li>5 estrelas</li>
+          <li><?php echo rand(1, 5); ?> estrelas</li>
           <li>
               <?php
               if($post["segunda"] == 1)
@@ -103,14 +103,14 @@ $posts = new Post();
         </ul>
         <hr>
         <ul class="tags">
-            <li id="partida">17:00</li>
+            <li id="partida"><?php echo date( "G:i", strtotime($post["horario_partida"]) ); ?></li>
             <?php
             $trajetos = $posts->getTrajeto($post["id"]);
             foreach( $trajetos as $trajeto ) {
                 echo "<li>$trajeto</li>";
             }
             ?>
-            <li id="chegada">19:00</li>
+            <li id="chegada"><?php echo date( "G:i", strtotime($post["horario_chegada"]) ); ?></li>
         </ul>
 
 
