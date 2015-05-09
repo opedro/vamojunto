@@ -1,4 +1,12 @@
 <?php
+/*
+ * Departamento: Desenvolvimento
+ * Gerente responsável: Pedro Ruiz
+ * Data e hora: 09/05/2015 - 10:00
+ * Autor: Pedro Ruiz
+ * <<Definição da Classe TAG>>
+ * Versão: 1.0
+  */
 
 require_once "../model/dao.class.php";
 
