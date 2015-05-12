@@ -24,7 +24,7 @@ class Tag {
 	public function __destruct() {
 		$this->db->disconnect();
 	}
-    public function insertPost(Tag $tag) {
+    public function insert(Tag $tag) {
         $this->db->insert(
             $table = "tab_tags",
             $values = "descricao=".$tag->$desc
