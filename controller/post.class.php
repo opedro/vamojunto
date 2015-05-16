@@ -76,7 +76,7 @@ class Post {
         $values[0] = getDate();
         $values[1] = $continuo;
         $j = 2;
-        for($i = 0; $i < count($week_Days); $i++)
+        for($i = 0; $i < count($week_Days); $i++,$j++)
             $values[$j] = $week_Days[$i] == true ? true : false;
 
         $values[10] = $status;
@@ -85,12 +85,12 @@ class Post {
         $values[13] = $id_pessoa;
         $values[14] = $hr_partida;
         $values[15] = $hr_chegada;
-        $this->db->insert(
+
+        $result = $this->db->insert(
             $table = "tab_post",
             $values
         );
 
-        $result = $this->db->getResult();
         return $result;
     }
 

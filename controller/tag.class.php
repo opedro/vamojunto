@@ -16,9 +16,11 @@ class Tag {
     private $id;
     private $desc;
 
-	public function __construct() {
+	public function __construct($descricao) {
 		$this->db = new dao('root','toor','vamojunto_development');
 		$this->db->connect();
+
+        $this->desc = $descricao;
 	}
 
 	public function __destruct() {
