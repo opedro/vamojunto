@@ -1,4 +1,14 @@
 <?php
+/*
+ * Departamento: Desenvolvimento
+ * Data e hora: 09/05/2015 - 10:00
+ * Autor: Thiago Retondar
+ * <<Definição da Classe Post>>
+ * Versão: 1.0.1
+ * Resp. alterações: Pedro Ruiz
+ * Motivo: Inserção do método createPost();
+ * Aguardando a revisão de Thiago Retondar
+  */
 
 require_once "../model/dao.class.php";
 
@@ -61,5 +71,27 @@ class Post {
 		$id_pessoas = $this->db->getResult();
 		return $id_pessoas;
 	}
+
+    public function insertPost($continuo, $week_Days, $status, $id_comunidade, $num_vagas, $id_pessoa, $hr_partida, $hr_chegada) {
+        $values[0] = getDate();
+        $values[1] = $continuo;
+        $j = 2;
+        for($i = 0; $i < count($week_Days); $i++)
+            $values[$j] = $week_Days[$i] == true ? true : false;
+
+        $values[10] = $status;
+        $values[11] = $id_comunidade;
+        $values[12] = $num_vagas;
+        $values[13] = $id_pessoa;
+        $values[14] = $hr_partida;
+        $values[15] = $hr_chegada;
+        $this->db->insert(
+            $table = "tab_post",
+            $values
+        );
+
+        $result = $this->db->getResult();
+        return $result;
+    }
 
 }
