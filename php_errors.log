@@ -1,0 +1,10 @@
+[27-Aug-2015 19:28:24 America/Sao_Paulo] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/vamojunto/model/dao.class.php on line 88
+[27-Aug-2015 19:28:24 America/Sao_Paulo] PHP Stack trace:
+[27-Aug-2015 19:28:24 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/vamojunto/view/index.php:0
+[27-Aug-2015 19:28:24 America/Sao_Paulo] PHP   2. Post->getPosts() /home/ubuntu/workspace/vamojunto/view/index.php:49
+[27-Aug-2015 19:28:24 America/Sao_Paulo] PHP   3. Dao->select() /home/ubuntu/workspace/vamojunto/controller/post.class.php:32
+[27-Aug-2015 19:31:53 America/Sao_Paulo] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/vamojunto/model/dao.class.php on line 88
+[27-Aug-2015 19:31:53 America/Sao_Paulo] PHP Stack trace:
+[27-Aug-2015 19:31:53 America/Sao_Paulo] PHP   1. {main}() /home/ubuntu/workspace/vamojunto/view/index.php:0
+[27-Aug-2015 19:31:53 America/Sao_Paulo] PHP   2. Post->getPosts() /home/ubuntu/workspace/vamojunto/view/index.php:49
+[27-Aug-2015 19:31:53 America/Sao_Paulo] PHP   3. Dao->select() /home/ubuntu/workspace/vamojunto/controller/post.class.php:32
