@@ -11,7 +11,7 @@ class Pessoa {
 	}
 
 	public function __destruct() {
-$this->db->disconnect();
+		$this->db->disconnect();
 	}
 
 	public function getPessoaById($id_pessoa) {
